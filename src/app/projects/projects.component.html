@@ -1,0 +1,75 @@
+<h1 class="text-6xl mx-auto w-full font-bold text-center text-red-400">
+  Projects
+</h1>
+<div
+  class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-1 2xl:grid-cols-2"
+>
+  <div
+    class="m-10 mx-auto px-5 lg:px-20 2xl:px-5 container"
+    *ngFor="let project of getProjects() | async"
+  >
+    <div
+      class="wrapper relative rounded-lg block lg:flex lg:m-auto items-center bg-gray-100 shadow-xl"
+      style="min-height: 19rem"
+    >
+      <div
+        class="relative w-full lg:w-3/7 h-full overflow-hidden rounded-t-lg lg:rounded-t-none md:rounded-l-lg"
+        style="min-height: 22rem"
+      >
+        <img
+          class="absolute inset-0 w-full h-full object-cover object-center"
+          src="{{ project.img }}"
+          alt=""
+        />
+        <div
+          class="absolute inset-0 w-full h-full bg-indigo-900 opacity-60"
+        ></div>
+        <div
+          class="absolute text-center inset-0 w-full h-full flex items-center justify-center fill-current text-white text-5xl font-semibold"
+        >
+          {{ project.projectName }}
+        </div>
+      </div>
+      <div
+        class="w-full lg:w-4/7 h-full flex items-center bg-gray-100 rounded-lg"
+      >
+        <div class="p-4 md:p-2 lg:p-12 lg:pr-24 lg:pl-16 md:py-12 w-full w-38">
+          <h1 class="text-lg font-semibold text-indigo-500 w-full">
+            Technologies
+          </h1>
+          <ul class="flex flex-wrap">
+            <li
+              *ngFor="let tech of project.technologies"
+              class="justify-center items-center m-1 font-medium py-1 px-1 rounded-md text-indigo-700 bg-indigo-100 border"
+            >
+              {{ tech }}
+            </li>
+          </ul>
+          <a
+            class="inline-block items-baseline mt-3 text-indigo-600 hover:text-indigo-900 focus:text-indigo-900"
+            *ngFor="let link of project.links"
+            href="{{ link.link }}"
+            target="_blank"
+          >
+            <div
+              class="flex justify-center items-center m-1 font-medium py-2 px-3 rounded-full text-indigo-700 border border-indigo-300"
+            >
+              <div
+                class="text-xs font-normal leading-none max-w-full flex-initial"
+              >
+                {{ link.name }}
+              </div>
+            </div>
+          </a>
+        </div>
+        <svg
+          class="hidden lg:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

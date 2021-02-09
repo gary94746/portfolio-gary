@@ -1,0 +1,119 @@
+<!-- component -->
+<h1
+  class="text-6xl mx-auto w-full font-bold text-center mt-2 md:mt-16 text-red-400"
+>
+  Work History
+</h1>
+<div class="grid grid-cols-9 mx-auto p-2 text-indigo-50">
+  <div class="contents" *ngFor="let job of getJobHistory() | async; index as i">
+    <div
+      *ngIf="!shouldBeLeft(i)"
+      class="md:col-start-5 md:col-end-6 mx-auto relative hidden md:block"
+    >
+      <div class="h-full w-6 flex items-center justify-center">
+        <div class="h-full w-1 bg-indigo-500 pointer-events-none"></div>
+      </div>
+
+      <div
+        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-500 shadow"
+      ></div>
+    </div>
+
+    <div
+      class="bg-indigo-500 col-start-1 col-end-7 p-4 rounded-xl my-4 shadow-md animate transform transition-transform md:hover:-translate-x-2 cursor-default"
+      [ngClass]="{
+        'opacity-90': job.isWorking,
+        'opacity-70': !job.isWorking,
+        'md:col-start-1': shouldBeLeft(i),
+        'md:col-end-5': shouldBeLeft(i),
+        'ml-auto': shouldBeLeft(i),
+        'md:col-start-6': !shouldBeLeft(i),
+        'md:col-end-10': !shouldBeLeft(i),
+        'mr-auto': !shouldBeLeft(i)
+      }"
+    >
+      <h3 class="font-semibold text-lg mb-1">{{ job.workName }}</h3>
+      <p class="text-red-300 text-center font-bold hidden md:block">
+        {{ job.from | date }} -
+        <span *ngIf="!job.isWorking; else nowLabel">{{ job.to | date }}</span>
+        <ng-template #nowLabel>Now</ng-template>
+      </p>
+      <p class="text-red-300 text-center font-bold md:hidden">
+        {{ job.from | date }} <br />
+        <span *ngIf="!job.isWorking; else nowLabel">{{ job.to | date }}</span>
+        <ng-template #nowLabel><p>Now</p></ng-template>
+      </p>
+      <p class="leading-tight text-justify">
+        {{ job.jobDescription }}
+      </p>
+      <div class="tab">
+        <input
+          class="absolute opacity-0"
+          id="tab-multi-{{ i }}"
+          type="checkbox"
+          name="tabs"
+        />
+        <label
+          class="block cursor-pointer mt-1 font-bold text-white"
+          for="tab-multi-{{ i }}"
+          >More information</label
+        >
+        <div class="tab-content leading-normal overflow-hidden">
+          <ul class="pl-2 list-inside list-disc">
+            <li *ngFor="let task of job.tasks">
+              {{ task }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-start-8 col-end-9 md:col-start-5 md:col-end-6 mx-auto relative"
+      *ngIf="shouldBeLeft(i)"
+    >
+      <div class="h-full w-6 flex items-center justify-center">
+        <div class="h-full w-1 bg-indigo-500 pointer-events-none"></div>
+      </div>
+
+      <div
+        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-500 shadow"
+      ></div>
+    </div>
+    <div
+      *ngIf="!shouldBeLeft(i)"
+      class="col-start-8 md:col-end-9 mx-auto relative md:hidden"
+    >
+      <div class="h-full w-6 flex items-center justify-center">
+        <div class="h-full w-1 bg-indigo-500 pointer-events-none"></div>
+      </div>
+
+      <div
+        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-500 shadow"
+      ></div>
+    </div>
+  </div>
+  <div class="contents">
+    <div
+      class="col-start-8 col-end-9 md:col-start-5 md:col-end-6 mx-auto relative"
+    >
+      <div class="h-full w-6 flex items-center justify-center">
+        <div class="h-full w-1 bg-indigo-500 pointer-events-none"></div>
+      </div>
+
+      <div
+        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-500 shadow animate-bounce"
+      ></div>
+      <button
+        (click)="openContact()"
+        class="inline-flex mt-3 mb-10 -ml-12 focus:outline-none bg-indigo-500 text-white rounded-full py-2 p-4 justify-center items-center absolute top-0 w-max transition duration-500 ease-in-out transform hover:scale-110"
+      >
+        Be the next!
+      </button>
+    </div>
+  </div>
+</div>
+<h1
+  class="text-6xl mx-auto w-full font-bold text-center mt-2 md:mt-28 text-transparent"
+>
+  Work History
+</h1>

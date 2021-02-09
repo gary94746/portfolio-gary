@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+	background-color: #0E2A47;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='400' height='400' preserveAspectRatio='none' viewBox='0 0 400 400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1022%26quot%3b)' fill='none'%3e%3crect width='400' height='400' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M38.06073377662843 256.4607950504425L-36.0636627857757 314.2594426696825 39.571132520513224 346.3645085063706z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M99.14416481150762 170.31259202552158L162.73905862528196 127.417294520441 119.84376112020138 63.822400706666684 56.248867306427044 106.71769821174726z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M81.78803168159965 79.2650527556948L35.88371641655817-15.080839331091873-16.72310501837441 60.04948784224549z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M314.20040909226975 121.68429624496852L287.52006179278055 14.239146913971439 216.74231210095272 80.24046626447613z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M176.818%2c382.151C202.528%2c381.852%2c224.359%2c364.403%2c236.291%2c341.627C247.378%2c320.463%2c244.377%2c295.861%2c233.04%2c274.83C220.986%2c252.469%2c202.221%2c231.309%2c176.818%2c231.298C151.402%2c231.287%2c132.834%2c252.552%2c120.515%2c274.783C108.655%2c296.185%2c103.533%2c321.371%2c114.896%2c343.04C127.048%2c366.213%2c150.654%2c382.456%2c176.818%2c382.151' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M173.69785758001524 228.22568795364867L136.02129759551065 157.36638446758235 65.1619941094443 195.04294445208694 102.8385540939489 265.90224793815327z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M349.23683764506586 188.43255158034881L342.33362931227146 254.11219156198132 408.01326929390393 261.0153998947758 414.9164776266984 195.33575991314325z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1022'%3e%3crect width='400' height='400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+

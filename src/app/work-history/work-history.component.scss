@@ -1,0 +1,18 @@
+.tab-content {
+	max-height: 0;
+  -webkit-transition: max-height 0.35s;
+  -o-transition: max-height 0.35s;
+  transition: max-height 0.35s;
+}
+      /* :checked - resize to full height */
+.tab input:checked ~ .tab-content {
+	max-height: 100vh;
+	border-style: none;
+}
+
+      /* Label formatting when open */
+.tab input:checked + label {
+	border: none;
+}
+      
+ 
