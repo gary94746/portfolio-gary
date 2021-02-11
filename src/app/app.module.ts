@@ -9,6 +9,7 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { SkillsComponent } from './skills/skills.component';
 import { WorkHistoryComponent } from './work-history/work-history.component';
 import { ContactMeService } from './contact-me.service';
+import { BriefComponent } from './brief/brief.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ContactMeService } from './contact-me.service';
     ContactMeComponent,
     SkillsComponent,
     WorkHistoryComponent,
+    BriefComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [ContactMeService],
