@@ -106,8 +106,7 @@ export class DataService {
         workName: 'Koomkin',
         role: 'Fronted Developer',
         from: new Date(2020, 10),
-        to: new Date(2021, 1),
-        isWorking: true,
+        to: new Date(2021, 2),
         jobDescription: 'Angular developer for marketplace',
         tasks: [
           'Designs implementation',
@@ -118,6 +117,7 @@ export class DataService {
         ],
       },
     ];
+
     return of(works);
   }
 
